@@ -9,7 +9,7 @@ export default function Experience()
 {
     return <>
         {/* this added so vignette visible on all corners, default bkgd is transparent */}
-        <color args={ [ 0x000000 ] } attach="background" /> 
+        <color args={ [ 0xffffff ] } attach="background" /> 
         
         {/* this is typically housed in separate component, often called 'Effects' */}
         <EffectComposer
@@ -34,10 +34,13 @@ export default function Experience()
                 // blendFunction={ BlendFunction.OVERLAY }
                 // blendFunction={ BlendFunction.SCREEN }
             /> */}
-            <Bloom
+            {/* <Bloom
                 // threshold for effect, need color channels to be above .9
-
-            />
+                // when in doubt be subtle
+                mipmapBlur // required to make bloom effect 'realistic' - creates actual bloom effect like a light would
+                intensity={ .5 }
+                luminanceThreshold={ 0 }
+            /> */}
         </EffectComposer>
 
         <Perf position="top-left" />
@@ -54,7 +57,16 @@ export default function Experience()
 
         <mesh castShadow position-x={ 2 } scale={ 1.5 }>
             <boxGeometry />
-            <meshStandardMaterial color="mediumpurple" toneMapped={ false } />
+            <meshStandardMaterial // make basic material if want more uniformity in glow effect, better for performance 
+                color={[ 1.5, 1, 4 ]}
+
+                // another way to accomplish glow effect with color
+                // color='orange'
+                // emissive='orange'
+                // emissiveIntensity={ 2 }
+
+                toneMapped={ false } // default toneMapping clamps color spectrum, need to turn off for bloom effect
+            />
         </mesh>
 
         <mesh receiveShadow position-y={ - 1 } rotation-x={ - Math.PI * 0.5 } scale={ 10 }>
