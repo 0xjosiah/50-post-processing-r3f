@@ -94,6 +94,7 @@ export default function Experience()
                 ref={ drunkRef }
                 frequency={ frequency }
                 amplitude={ amplitude }
+                blendFunction={ BlendFunction.DARKEN }
             />
         </EffectComposer>
 
