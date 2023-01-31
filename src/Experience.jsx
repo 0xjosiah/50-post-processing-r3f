@@ -2,7 +2,7 @@ import { OrbitControls } from '@react-three/drei'
 import { Perf } from 'r3f-perf'
 
 // should add both the following packages separately 
-import { Bloom, EffectComposer, Glitch, Noise, Vignette } from '@react-three/postprocessing'
+import { Bloom, DepthOfField, EffectComposer, Glitch, Noise, Vignette } from '@react-three/postprocessing'
 import { BlendFunction, GlitchMode } from 'postprocessing'
 
 export default function Experience()
@@ -41,6 +41,13 @@ export default function Experience()
                 intensity={ .5 }
                 luminanceThreshold={ 0 }
             /> */}
+            {/* <DepthOfField // not great for performance
+                // these values are in normalized space, 0 - 1 only
+                focusDistance={ .025 }
+                focalLength={ .025 }
+
+                bokehScale={ 6 }
+            /> */}
         </EffectComposer>
 
         <Perf position="top-left" />
@@ -58,10 +65,10 @@ export default function Experience()
         <mesh castShadow position-x={ 2 } scale={ 1.5 }>
             <boxGeometry />
             <meshStandardMaterial // make basic material if want more uniformity in glow effect, better for performance 
-                color={[ 1.5, 1, 4 ]}
+                // color={[ 1.5, 1, 4 ]}
 
                 // another way to accomplish glow effect with color
-                // color='orange'
+                color='mediumpurple'
                 // emissive='orange'
                 // emissiveIntensity={ 2 }
 
