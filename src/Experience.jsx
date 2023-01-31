@@ -5,6 +5,7 @@ import { useControls } from 'leva'
 // should add both the following packages separately 
 import { Bloom, DepthOfField, EffectComposer, Glitch, Noise, SSR, Vignette } from '@react-three/postprocessing'
 import { BlendFunction, GlitchMode } from 'postprocessing'
+import Drunk from './Drunk'
 
 export default function Experience()
 {
@@ -83,6 +84,7 @@ export default function Experience()
             {/* <SSR
                 { ...ssrProps }
             /> */}
+            <Drunk />
         </EffectComposer>
 
         <Perf position="top-left" />
