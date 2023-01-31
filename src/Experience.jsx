@@ -11,7 +11,7 @@ import { useRef } from 'react'
 export default function Experience()
 {
     const drunkRef = useRef()
-    const { frequency, amplitude } = useControls({
+    const drunkProps = useControls({
         frequency: { value: 2, min: 0, max: 20 },
         amplitude: { value: .1, min: 0, max: 1 }
     })
@@ -92,8 +92,7 @@ export default function Experience()
             /> */}
             <Drunk
                 ref={ drunkRef }
-                frequency={ frequency }
-                amplitude={ amplitude }
+                { ...drunkProps }
                 blendFunction={ BlendFunction.DARKEN }
             />
         </EffectComposer>
