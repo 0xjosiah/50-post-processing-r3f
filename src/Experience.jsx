@@ -12,7 +12,7 @@ export default function Experience()
 {
     const drunkRef = useRef()
     const { frequency, amplitude } = useControls({
-        frequency: { value: 10, min: 0, max: 50 },
+        frequency: { value: 2, min: 0, max: 20 },
         amplitude: { value: .1, min: 0, max: 1 }
     })
     // const ssrProps = useControls({
