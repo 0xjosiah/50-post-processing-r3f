@@ -11,6 +11,10 @@ import { useRef } from 'react'
 export default function Experience()
 {
     const drunkRef = useRef()
+    const { frequency, amplitude } = useControls({
+        frequency: { value: 10, min: 0, max: 50 },
+        amplitude: { value: .1, min: 0, max: 1 }
+    })
     // const ssrProps = useControls({
     //     temporalResolve: true,
     //     STRETCH_MISSED_RAYS: true,
@@ -88,8 +92,8 @@ export default function Experience()
             /> */}
             <Drunk
                 ref={ drunkRef }
-                frequency={ 2 }
-                amplitude={ .1 }
+                frequency={ frequency }
+                amplitude={ amplitude }
             />
         </EffectComposer>
 
