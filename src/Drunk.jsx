@@ -1,7 +1,8 @@
 import DrunkEffect from './DrunkEffect'
 
-export default function Drunk() {
-    const effect = new DrunkEffect()
+export default function Drunk(props) {
+    
+    const effect = new DrunkEffect(props)
 
     return (
         <>
