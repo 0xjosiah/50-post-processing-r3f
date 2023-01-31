@@ -1,7 +1,8 @@
+import { forwardRef } from 'react'
 import DrunkEffect from './DrunkEffect'
 
-export default function Drunk(props) {
-    
+export default forwardRef(function Drunk(props) {
+
     const effect = new DrunkEffect(props)
 
     return (
@@ -9,4 +10,4 @@ export default function Drunk(props) {
             <primitive object={ effect } />
         </>
     )
-}
+})

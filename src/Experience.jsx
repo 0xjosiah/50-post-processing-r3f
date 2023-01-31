@@ -6,9 +6,11 @@ import { useControls } from 'leva'
 import { Bloom, DepthOfField, EffectComposer, Glitch, Noise, SSR, Vignette } from '@react-three/postprocessing'
 import { BlendFunction, GlitchMode } from 'postprocessing'
 import Drunk from './Drunk'
+import { useRef } from 'react'
 
 export default function Experience()
 {
+    const drunkRef = useRef()
     // const ssrProps = useControls({
     //     temporalResolve: true,
     //     STRETCH_MISSED_RAYS: true,
@@ -85,6 +87,7 @@ export default function Experience()
                 { ...ssrProps }
             /> */}
             <Drunk
+                ref={ drunkRef }
                 frequency={ 2 }
                 amplitude={ .1 }
             />
