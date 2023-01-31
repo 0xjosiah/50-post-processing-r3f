@@ -9,6 +9,12 @@ const fragmentShader = /* glsl */ `
 export default class DrunkEffect extends Effect {
 
     constructor() {
-        super()
+        super(
+            'DrunkEffect',
+            fragmentShader,
+            {
+
+            }
+        )
     }
 }
